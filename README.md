@@ -1,4 +1,4 @@
-#Angular Quiz: Building a Dynamic User Dashboard
+# Angular Quiz: Building a Dynamic User Dashboard
 
 ## Description:
 This repository contains my solution for the Angular Quiz task assigned to me as part of a frontend Angular position application. The goal of the task was to demonstrate proficiency in Angular (7+) by creating an interactive user dashboard while employing advanced features like state management frameworks, directives, and observables. Additionally, proper styling, animations, and caching techniques were emphasized. The usage of UI libraries like Angular Material was permitted.
