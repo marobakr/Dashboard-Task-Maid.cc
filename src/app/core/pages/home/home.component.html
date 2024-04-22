@@ -5,12 +5,20 @@
         class="col-md-4"
         *ngFor="let user of userData | search : search_Id; let i = count"
       >
-        <mat-card class="example-card">
+        <mat-card class="example-card h-100">
           <mat-card-header class="pb-3">
-            <mat-card-title>{{ user.first_name }} </mat-card-title>
-            <mat-card-subtitle>{{ user.last_name }}</mat-card-subtitle>
+            <mat-card-title-group>
+              <mat-card-title>{{ user.first_name }} </mat-card-title>
+              <mat-card-subtitle>{{ user.last_name }}</mat-card-subtitle>
+            </mat-card-title-group>
+            <p class="mb-0">{{ user.id }}</p>
           </mat-card-header>
-          <img mat-card-image [src]="user.avatar" [alt]="user.first_name" />
+          <img
+            class="h-100"
+            mat-card-image
+            [src]="user.avatar"
+            [alt]="user.first_name"
+          />
           <mat-card-actions>
             <button
               class="w-100 text-capitalize"
@@ -27,10 +35,10 @@
     </div>
   </div>
 </section>
+
 <mat-paginator
-  [length]="lengthOfItems"
+  [length]="totalItems"
   [pageSize]="pageSize"
-  pageIndex=""
   (page)="pageChanged($event)"
   aria-label="Select page"
 >

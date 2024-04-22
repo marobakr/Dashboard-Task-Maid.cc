@@ -29,10 +29,11 @@ export class HomeComponent implements OnInit {
     private _userService: UserService,
     private _viewportScroller: ViewportScroller
   ) {}
-  search_Id: string = '';
   userData: User[] = [];
-  lengthOfItems: number = 12;
-  pageSize: number = 6;
+  search_Id: string = '';
+  lengthOfItems: number = 0;
+  pageSize: number = 0;
+  totalItems: number = 0;
   ngOnInit(): void {
     this.displayCard();
     this.subScripeOnSearch();
@@ -41,6 +42,8 @@ export class HomeComponent implements OnInit {
   displayCard(): void {
     this._userService.getUsers().subscribe((reponse) => {
       this.userData = reponse.data;
+      this.pageSize = reponse.per_page;
+      this.totalItems = reponse.total;
     });
   }
   pageChanged(event: PageEvent): void {
