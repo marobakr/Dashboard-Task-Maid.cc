@@ -1,12 +1,11 @@
-<mat-toolbar
-  color="primary"
-  fxLayout="row"
-  fxLayoutAlign="space-between center"
-  class="text-center"
->
-  <p class="mb-0" fxFlex="100">Developed by Marwan Abubakr</p>
-  <p class="mb-0" fxFlex="100">
-    Maids.cc &copy;2009 - {{ cuurentData | date }}
-  </p>
-  <p class="mb-0" fxFlex="100">License Number 730266 - Legal</p>
-</mat-toolbar>
+<footer class="py-4" [ngStyle]="{ 'background-color': primary }">
+  <div class="container">
+    <div
+      class="innner text-white d-flex justify-content-center justify-content-lg-between align-items-center flex-wrap gap-4"
+    >
+      <p class="mb-0">Developed by Marwan Abubakr</p>
+      <p class="mb-0">Maids.cc &copy;2009 - {{ cuurentData | date }}</p>
+      <p class="mb-0">License Number 730266 - Legal</p>
+    </div>
+  </div>
+</footer>
