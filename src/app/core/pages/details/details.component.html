@@ -1,0 +1,33 @@
+<section class="details py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <mat-card class="example-card">
+          <mat-card-header class="pb-3">
+            <mat-card-title>{{ userDetails.data?.first_name }} </mat-card-title>
+            <mat-card-subtitle>{{
+              userDetails.data?.last_name
+            }}</mat-card-subtitle>
+          </mat-card-header>
+          <img
+            mat-card-image
+            [src]="userDetails.data?.avatar"
+            [alt]="userDetails.data?.first_name"
+          />
+          <mat-card-actions>
+            <button
+              mat-button
+              mat-raised-button
+              class="text-capitalize"
+              routerLink="'/home'"
+              color="primary"
+              class="w-100 text-capitalize"
+            >
+              back to Home
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>
