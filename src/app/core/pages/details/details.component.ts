@@ -1,8 +1,7 @@
-import { AfterContentInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserService } from '../../services/user.service';
 import { ActivatedRoute } from '@angular/router';
-import { UserDetails } from '../../interface/user-details';
+import { User } from '../../interface/user';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -20,30 +19,20 @@ import { RouterLink } from '@angular/router';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss'],
 })
-export class DetailsComponent implements AfterContentInit {
-  constructor(
-    private _userService: UserService,
-    private _activatedRoute: ActivatedRoute
-  ) {}
+export class DetailsComponent implements OnInit {
+  constructor(private _activatedRoute: ActivatedRoute) {}
 
-  userDetails: UserDetails = {} as UserDetails;
-  ngAfterContentInit(): void {
-    this.getIdPrameter();
+  userDetails: User = {} as User;
+
+  ngOnInit(): void {
+    this.displayDetails();
   }
 
-  getIdPrameter(): void {
-    this._activatedRoute.paramMap.subscribe({
+  displayDetails(): void {
+    this._activatedRoute.data.subscribe({
       next: (respons: any) => {
-        this.displayDetails(respons.params.id);
-      },
-    });
-  }
-
-  displayDetails(id: number): void {
-    this._userService.getDetailsUser(id).subscribe({
-      next: (response) => {
-        console.log(response);
-        this.userDetails = response;
+        this.userDetails = respons.details.data;
+        console.log(this.userDetails);
       },
     });
   }

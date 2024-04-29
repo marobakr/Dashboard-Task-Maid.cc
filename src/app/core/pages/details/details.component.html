@@ -1,23 +1,19 @@
-<section class="details py-5" *ngIf="userDetails.data.avatar">
+<section class="details py-5">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-4">
         <mat-card class="example-card">
           <mat-card-header class="pb-3">
             <mat-card-title-group>
-              <mat-card-title
-                >{{ userDetails.data.first_name }}
-              </mat-card-title>
-              <mat-card-subtitle>{{
-                userDetails.data.last_name
-              }}</mat-card-subtitle>
+              <mat-card-title>{{ userDetails.first_name }} </mat-card-title>
+              <mat-card-subtitle>{{ userDetails.last_name }}</mat-card-subtitle>
             </mat-card-title-group>
-            <p class="mb-0">{{ userDetails.data.id }}</p>
+            <p class="mb-0">{{ userDetails.id }}</p>
           </mat-card-header>
           <img
             mat-card-image
-            [src]="userDetails.data?.avatar"
-            [alt]="userDetails.data?.first_name"
+            [src]="userDetails.avatar"
+            [alt]="userDetails.first_name"
           />
           <mat-card-actions>
             <button

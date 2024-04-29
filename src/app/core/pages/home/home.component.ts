@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     private _viewportScroller: ViewportScroller
   ) {}
   userData: User[] = [];
-  search_Id: string = '';
+  search_Id: number = 0;
   lengthOfItems: number = 0;
   pageSize: number = 0;
   totalItems: number = 0;
