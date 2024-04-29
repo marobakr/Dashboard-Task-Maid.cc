@@ -6,11 +6,10 @@ import { User } from '../interface/user';
   standalone: true,
 })
 export class SearchPipe implements PipeTransform {
-  transform(userdata: User[], id: string): User[] {
-    let _ID = parseInt(id);
+  transform(userdata: User[], id: number): User[] {
     if (id) {
       return userdata.filter((user) => {
-        return user.id === _ID;
+        return user.id == +id;
       });
     } else {
       return userdata;

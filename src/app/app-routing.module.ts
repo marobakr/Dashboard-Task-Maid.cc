@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { detailsResolver } from './core/guards/details.resolver';
 
 const routes: Routes = [
   {
@@ -8,6 +9,7 @@ const routes: Routes = [
       import('./core/pages/home/home.component').then((m) => m.HomeComponent),
   },
   {
+    resolve: { details: detailsResolver },
     path: 'details/:id',
     loadComponent: () =>
       import('./core/pages/details/details.component').then(
